@@ -47,7 +47,7 @@ function checksTodoExists(request, response, next) {
     if (!uuidValidate(id)) return response.status(400)
         .json({ error: "ID is not valid", })
 
-    // Verify if exists Account by username.
+    // Verify if exists Todo.
     const todo = user.todos.find(todo => todo.id === id);
     if (!todo) return response.status(404)
         .json({ error: "Todo not found" });
